@@ -1,0 +1,76 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_vacancy_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: JOB_VACANCY
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_VACANCY
+              - column:
+                  name: SLUG
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: COMPANY_NAME
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: TITLE
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: DESCRIPTION
+                  type: CLOB
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: REMOTE
+                  type: BOOLEAN
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: URL
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: TAGS
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: JOB_TYPES
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: LOCATION
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: CREATED_AT
+                  type: BIGINT
+                  constraints:
+                    unique: false
+                    nullable: false
