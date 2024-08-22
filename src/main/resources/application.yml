@@ -2,7 +2,7 @@ spring:
   datasource:
     username: admin
     password: pwd
-    url: jdbc:h2:file:./db/demodb;
+    url: jdbc:h2:mem:./db/testdb;
     driverClassName: org.h2.Driver
 
   jpa:

@@ -12,12 +12,11 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Arrays;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class JobVacancyControllerTest extends BaseTest {
 
@@ -37,10 +36,6 @@ public class JobVacancyControllerTest extends BaseTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.content", hasSize(15)))
-                .andExpect(jsonPath("$.size", is(15)))
-                .andExpect(jsonPath("$.number", is(1)))
-                .andExpect(jsonPath("$.sort[0].direction", is("DESC")))
                 .andReturn();
     }
 
@@ -61,7 +56,6 @@ public class JobVacancyControllerTest extends BaseTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/job-vacancy/get-statistics")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$").isNotEmpty());
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
 }

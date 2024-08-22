@@ -12,10 +12,6 @@ java {
     sourceCompatibility = '19'
 }
 
-application {
-    mainClass = 'com.ops.store.AdminApplication'
-}
-
 repositories {
     mavenCentral()
 }
@@ -36,7 +32,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.5.0'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.1'
+    implementation 'com.h2database:h2:2.3.232'
     testImplementation 'com.h2database:h2:2.3.232'
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.5.0'
 }
 
 test {
